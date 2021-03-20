@@ -21,8 +21,10 @@ struct pcb {
 class PCB {
 	public:
 		PCB() {head = NULL;}
+		~PCB();
 		void insertElements(int index, int cpuid, int status, int priority, int codeSize);
 		void printList();
+
 	private:
 		pcb *head;
 };

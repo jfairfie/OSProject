@@ -9,6 +9,10 @@
 #include <iostream>
 
 
+PCB::~PCB() {
+	delete head;
+}
+
 void PCB::insertElements(int index, int cpuid, int status, int priority, int codeSize) {
 	pcb *tempPCB = new pcb;
 	tempPCB->index = index;
@@ -16,22 +20,25 @@ void PCB::insertElements(int index, int cpuid, int status, int priority, int cod
 	tempPCB->status = status;
 	tempPCB->priority = priority;
 	tempPCB->codeSize = codeSize;
+	tempPCB->next = NULL;
 
-	if (head == NULL) {
+	pcb *last;
+	last = head;
+
+	if (last == NULL) {
 		head = tempPCB;
 	} else {
-		pcb* temp = head;
-		while (temp->next != NULL) {
-			temp = temp->next;
+		while(last->next != NULL) {
+			last = last->next;
 		}
-		temp->next = tempPCB;
+		last->next = tempPCB;
 	}
 }
 
 void PCB::printList() {
 	pcb* temp = head;
 	while (temp != NULL) {
-		std::cout << temp->index << " " << std::endl;
+		std::cout << temp->index << " " << temp->priority <<  " " << temp->codeSize << std::endl;
 		temp = temp->next;
 	}
 }

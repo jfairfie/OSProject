@@ -8,13 +8,16 @@
 #ifndef DRIVER_H_
 #define DRIVER_H_
 #include "MemoryManagement/Disk.h"
+#include "MemoryManagement/PCB.h"
+#include <vector>
 
+
+using namespace std;
 class Driver {
 	public:
-		Driver();
 		void RUN();
 	private:
-		void Loader(Disk disk);
+		void Loader(Disk &disk, PCB &pcbList);
 };
 
 #endif /* DRIVER_H_ */

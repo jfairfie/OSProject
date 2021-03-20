@@ -11,9 +11,6 @@
 class RAM {
 	public:
 		RAM();
-		const int SIZE;
-		char hexCharacters[SIZE];
-		char * returnInstruction(int index);
 };
 
 #endif /* RAM_H_ */
