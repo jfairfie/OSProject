@@ -29,4 +29,11 @@ int Disk::getLastIndex(std::string characters[]) {
 	return -1;
 }
 
+void Disk::printIndex(int index) {
+	std::cout << " " << hexCharacters[index] << std::endl;
+}
 
+std::string Disk::returnIndex(int index) {
+	std::string data = hexCharacters[index];
+	return hexCharacters[index];
+}

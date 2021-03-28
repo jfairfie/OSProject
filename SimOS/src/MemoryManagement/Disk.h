@@ -14,6 +14,8 @@ class Disk {
 	public:
 		void insertNextIndex(std::string data);
 		void printDisk();
+		void printIndex(int index);
+		std::string returnIndex(int index);
 	private:
 		int getLastIndex(std::string array[]);
 		std::string hexCharacters[SIZE] = {""};

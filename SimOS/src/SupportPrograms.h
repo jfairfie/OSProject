@@ -11,13 +11,15 @@
 
 class SupportPrograms {
 	public:
-//		int hexToBinary(char hex[]);
+		std::string hexToBinary(std::string hex);
 		int hexToDecimal(std::string hex);
 //		int hexToDecimal(char hex[]);
 //		int binaryToDecimal(int bin[]);
 //		std::string binaryToHex(int bin[]);
 //		int decimalToBinary(int dec[]);
 //		std::string decimalToHex(int dec[]);
+	private:
+		std::string hexCharMap(char hexChar);
 };
 
 #endif /* SUPPORTPROGRAMS_H_ */
